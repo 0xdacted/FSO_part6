@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { createStore } from 'redux';
-import counterReducer from './reducer';
+import counterReducer from '../reducer';
 
 const store = createStore(counterReducer);
 
@@ -45,3 +45,5 @@ const App = () => {
     </div>
   );
 };
+
+export default App
