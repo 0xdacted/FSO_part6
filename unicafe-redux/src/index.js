@@ -4,9 +4,9 @@ import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import App from './components/App'
 
-import counterReducer from './reducer';
+import reviewReducer from './reducers/reviewReducer';
 
-const store = createStore(counterReducer);
+const store = createStore(reviewReducer);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Provider store={store}>

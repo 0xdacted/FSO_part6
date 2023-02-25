@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { createStore } from 'redux';
-import counterReducer from '../reducer';
+import reviewReducer from '../reducers/reviewReducer';
 
-const store = createStore(counterReducer);
+const store = createStore(reviewReducer);
 
 const App = () => {
   const [counts, setCounts] = useState(store.getState());

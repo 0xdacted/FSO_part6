@@ -1,6 +1,6 @@
 const initialState = [0, 0, 0];
 
-const counterReducer = (state = initialState, action) => {
+const reviewReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'GOOD':
       return [
@@ -27,4 +27,4 @@ const counterReducer = (state = initialState, action) => {
   }
 };
 
-export default counterReducer;
+export default reviewReducer;
