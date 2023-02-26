@@ -1,5 +1,4 @@
-import { useSelector, useDispatch } from 'react-redux'
-import { voteForAnecdote } from './reducers/anecdoteReducer'
+import { useSelector } from 'react-redux'
 import AnecdoteForm from './components/AnecdoteForm'
 import AnecdoteList from './components/AnecdoteList'
 
@@ -10,7 +9,6 @@ const App = () => {
     <div>
       <h2>Anecdotes</h2>
       <AnecdoteList anecdotes={anecdotes}/>
-    
       <AnecdoteForm/>
     </div>
   )
