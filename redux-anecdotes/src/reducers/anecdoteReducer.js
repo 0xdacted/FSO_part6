@@ -1,3 +1,4 @@
+
 const anecdotesAtStart = [
   'If it hurts, do it more often',
   'Adding manpower to a late software project makes it later!',
@@ -8,6 +9,24 @@ const anecdotesAtStart = [
 ]
 
 const getId = () => (100000 * Math.random()).toFixed(0)
+
+const voteForAnecdote = (id) => {
+ return {
+    type: 'VOTE',
+    data: { id }
+  }
+}
+
+const addAnecdote = (content) => {
+  return {
+    type: 'NEW_ANECDOTE',
+    data: {
+      content, 
+      id: getId(),
+      votes: 0
+    }
+  }
+}
 
 const asObject = (anecdote) => {
   return {
@@ -38,5 +57,5 @@ const reducer = (state = initialState, action) => {
     return state
   }
 }
-
-export { reducer, getId }
+export default reducer
+export { voteForAnecdote, addAnecdote }
