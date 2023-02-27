@@ -9,7 +9,7 @@ const AnecdoteForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault()
     const content = event.target.anecdote.value
-    dispatch(setNewNotification(`You added '${content}'`))
+    dispatch(setNewNotification(`You added '${content}'`, 5))
     event.target.anecdote.value = ''
     dispatch(addAnecdote(content))
   }
