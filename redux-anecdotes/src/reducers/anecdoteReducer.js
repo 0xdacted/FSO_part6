@@ -12,12 +12,7 @@ const anecdoteSlice = createSlice({
       anecdoteToVote.votes++
     },
     addAnecdote: (state, action) => {
-      const newAnecdote = {
-        id: getId(),
-        content: action.payload,
-        votes: 0
-      }
-      state.push(newAnecdote)
+      state.push(action.payload)
     },
     appendAnecdote(state, action) {
       state.push(action.payload)
