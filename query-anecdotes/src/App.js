@@ -1,15 +1,10 @@
 import AnecdoteForm from './components/AnecdoteForm'
 import Notification from './components/Notification'
-import { useQuery, useMutation } from 'react-query'
-import { getAnecdotes, createAnecdote } from './requests'
+import { useQuery } from 'react-query'
+import { getAnecdotes } from './requests'
 
 const App = () => {
-  const newAnecdoteMutation = useMutation(createNote)
 
-  const addAnecdote = async (event) => {
-    event.preventDefault()
-    const content =
-  }
   const handleVote = (anecdote) => {
     console.log('vote')
   }
