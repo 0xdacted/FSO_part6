@@ -1,5 +1,6 @@
 import AnecdoteForm from './components/AnecdoteForm'
 import Notification from './components/Notification'
+import axios, { useQuery } from 'axios'
 
 const App = () => {
 
@@ -7,12 +8,13 @@ const App = () => {
     console.log('vote')
   }
 
+  const result = useQuery(
+    'notes',
+    () => axios.get('http://localhost:3001/anecdotes')
+  )
+
   const anecdotes = [
-    {
-      "content": "If it hurts, do it more often",
-      "id": "47145",
-      "votes": 0
-    },
+    result.data
   ]
 
   return (
