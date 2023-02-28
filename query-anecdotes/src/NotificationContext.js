@@ -1,6 +1,6 @@
-import { createContext, useEffect, useReducer } from 'react';
+import { createContext, useEffect, useReducer, useContext } from 'react';
 
-const notificationReducer = (state, action) => {
+export const notificationReducer = (state, action) => {
   switch(action.type) {
     case 'SHOW_NOTIFICATION':
       return {
@@ -16,6 +16,8 @@ const notificationReducer = (state, action) => {
       return state;
   }
 }
+
+const NotificationContext = createContext();
 
 
 export const NotificationContextProvider = (props) => {
@@ -37,6 +39,14 @@ export const NotificationContextProvider = (props) => {
   )
 }
 
-const NotificationContext = createContext();
+export const useNotificationValue = () => {
+  const notificationAndDispatch = useContext(NotificationContext)
+  return notificationAndDispatch[0]
+}
+
+export const useNotificationDispatch = () => {
+  const notificationAndDispatch = useContext(NotificationContext)
+  return notificationAndDispatch[1]
+}
 
 export default NotificationContext;

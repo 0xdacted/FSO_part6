@@ -4,6 +4,7 @@ import { useQuery, useQueryClient, useMutation} from 'react-query'
 import { getAnecdotes, updateAnecdote } from './requests'
 
 const App = () => {
+
   const queryClient = useQueryClient()
   
   const updateAnecdoteMutation = useMutation(updateAnecdote, {
@@ -41,9 +42,7 @@ const App = () => {
 
   return (
     <div>
-  
       <h3>Anecdote app</h3>
-    
       <Notification />
       <AnecdoteForm />
       {anecdotes.map(anecdote =>
