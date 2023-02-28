@@ -9,27 +9,27 @@ const App = () => {
     console.log('vote')
   }
 
-  const result = useQuery(
-    'notes',
+  const { isLoading, error, data: anecdotes} = useQuery(
+    'anecdotes',
     () => axios.get('http://localhost:3001/anecdotes').then(res => res.data)
   )
-  console.log(result)
 
-  if ( result.isLoading ) {
+  if ( isLoading ) {
     return <div> loading data... </div>
   }
 
-  const anecdotes = result.data
+  if (error) {
+    return <div>Error: {error.message} </div>
+  }
   
 
   return (
     <div>
-    
+  
       <h3>Anecdote app</h3>
     
       <Notification />
       <AnecdoteForm />
-    
       {anecdotes.map(anecdote =>
         <div key={anecdote.id}>
           <div>
